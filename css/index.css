@@ -388,3 +388,12 @@ li {
   justify-content: center;
   margin: 50px;
 }
+.summitWrapper button {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+.summitWrapper button:active {
+  background-color: #cccccc25;
+}

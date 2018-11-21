@@ -125,33 +125,33 @@ function tableList(id) {
   switch (id) {
       case "text":
           //文本框
-          var text = '<input type="text" class="form-control" placeholder="请输入文本">';
+          var text = '<input type="text" name="text"  class="form-control" placeholder="请输入文本">';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">文本：</label><div class="col-sm-7">' + text + '</div><p class="tools col-sm-3"><a class="edit-link" name="text" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a><label class="labcheck"><input type="checkbox"> 必填</label></p></div>';
           break;
       case "select":
           //下拉框
-          var select = '<select class="form-control"><option>请选择</option><option>默认</option></select>';
+          var select = '<select name="select" class="form-control"><option>请选择</option><option>默认</option></select>';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">下拉框：</label><div class="col-sm-7">' + select + '</div><p class="tools col-sm-3"><a class="edit-link" name="select" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a><label class="labcheck"><input type="checkbox"> 必填</label></p></div>';
           break;
       case "textarea":
           //多行文本
-          var textarea = '<textarea class="form-control" placeholder="请输入文本"></textarea>';
+          var textarea = '<textarea name="textArea"  class="form-control" placeholder="请输入文本"></textarea>';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">多行文本：</label><div class="col-sm-7">' + textarea + '</div><p class="tools col-sm-3"><a class="edit-link" name="textarea" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a><label class="labcheck"><input type="checkbox"> 必填</label></p></div>';
           break;
       case "radio":
           //单选框
-          var radom = Math.ceil(Math.random() * 100000);
-          var radio = '<label class="radio-inline"><input type="radio" value="默认1" name="rad' + radom + '" checked> 默认1</label><label class="radio-inline"><input type="radio" name="rad' + radom + '" value="默认2"> 默认2</label>';
+        //   var radom = Math.ceil(Math.random() * 100000);
+          var radio = '<label class="radio-inline"><input name="radio" type="radio" value="默认1" checked> 默认1</label><label class="radio-inline"><input type="radio" name="radio" value="默认2"> 默认2</label>';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">单选：</label><div class="col-sm-7">' + radio + '</div><p class="tools col-sm-3"><a class="edit-link" name="radio" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a></p></div>';
           break;
       case "checkbox":
           //多选框
-          var checkbox = '<label class="radio-inline" style="padding-left:0px;"><input type="checkbox" name="默认1"> 默认1</label><label class="radio-inline" style="padding-left:0px;"><input type="checkbox" name="默认2"> 默认2</label>';
+          var checkbox = '<label class="radio-inline" style="padding-left:0px;"><input type="checkbox" name="checkbox"> 默认1</label><label class="radio-inline" style="padding-left:0px;"><input type="checkbox" name="checkbox"> 默认2</label>';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">多选：</label><div class="col-sm-7">' + checkbox + '</div><p class="tools col-sm-3"><a class="edit-link" name="checkbox" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a></p></div>';
           break;
       case "datetime":
           //时间
-          var datetime = '<input readonly="" class="form-control form_datetime" type="text" style="border: 1px solid #e5e6e7;">';
+          var datetime = '<input name="datetime" readonly="" class="form-control form_datetime" type="text" style="border: 1px solid #e5e6e7;">';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">时间：</label><div class="col-sm-7">' + datetime + '</div><p class="tools col-sm-3"><a class="edit-link" name="datetime" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a></p></div>';
           break;
       case "file":
@@ -161,53 +161,52 @@ function tableList(id) {
           break;
       case "picker":
           //省市区
-          var picker = '<form class="form-inline"><div class="distpicker"><div class="form-group" style="margin:0px; padding-right:10px;"><label class="sr-only" for="province10">Province</label><select class="form-control" id="province10"></select></div><div class="form-group" style="margin:0px; padding-right:10px;"><label class="sr-only" for="city10">City</label><select class="form-control" id="city10"></select></div><div class="form-group" style="margin:0px; padding-right:10px;"><label class="sr-only" for="district10">District</label><select class="form-control" id="district10"></select></div></div></form>';
+          var picker = '<form class="form-inline"><div class="distpicker"><div class="form-group" style="margin:0px; padding-right:10px;"><label class="sr-only" for="province10">Province</label><select name="sheng" class="form-control" id="province10"></select></div><div class="form-group" style="margin:0px; padding-right:10px;"><label class="sr-only" for="city10">City</label><select name="shi" class="form-control" id="city10"></select></div><div class="form-group" style="margin:0px; padding-right:10px;"><label class="sr-only" for="district10">District</label><select name="qu" class="form-control" id="district10"></select></div></div></form>';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">省市区：</label><div class="col-sm-7">' + picker + '</div><p class="tools col-sm-3"><a class="edit-link" name="picker" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a></p></div>';
           break;
       case "name":
           //姓名
-          var text = '<input type="text" class="form-control" placeholder="请输入你的姓名">';
+          var text = '<input type="text" name="studentName" class="form-control" placeholder="请输入你的姓名">';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">姓名：</label><div class="col-sm-7">' + text + '</div><p class="tools col-sm-3"><a class="edit-link" name="text" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a><label class="labcheck"><input type="checkbox"> 必填</label></p></div>';
           break;
       case "phone":
           //电话
-          var text = '<input type="text" class="form-control" placeholder="请输入你的电话">';
+          var text = '<input type="text" name="studentPhone" class="form-control" placeholder="请输入你的电话">';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">电话：</label><div class="col-sm-7">' + text + '</div><p class="tools col-sm-3"><a class="edit-link" name="text" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a><label class="labcheck"><input type="checkbox"> 必填</label></p></div>';
           break;
       case "email":
           //邮箱
-          var text = '<input type="text" class="form-control" placeholder="请输入你的邮箱">';
+          var text = '<input type="text" name="studentEmail" class="form-control" placeholder="请输入你的邮箱">';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">邮箱：</label><div class="col-sm-7">' + text + '</div><p class="tools col-sm-3"><a class="edit-link" name="text" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a><label class="labcheck"><input type="checkbox"> 必填</label></p></div>';
           break;
       case "card":
           //身份证
-          var text = '<input type="text" class="form-control" placeholder="请输入你的身份证">';
+          var text = '<input type="text" name="studentIdCard" class="form-control" placeholder="请输入你的身份证">';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">身份证：</label><div class="col-sm-7">' + text + '</div><p class="tools col-sm-3"><a class="edit-link" name="text" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a><label class="labcheck"><input type="checkbox"> 必填</label></p></div>';
           break;
       case "www":
-          //姓名
+          //网址
           var text = '<input type="text" class="form-control" placeholder="请输入你的个人网站地址">';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">个人网站：</label><div class="col-sm-7">' + text + '</div><p class="tools col-sm-3"><a class="edit-link" name="text" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a><label class="labcheck"><input type="checkbox"> 必填</label></p></div>';
           break;
       case "logo":
-          //姓名
+          //Logo
           var file = '<input class="file uploadfile" type="file" multiple data-min-file-count="1">';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">上传Logo：</label><div class="col-sm-7">' + file + '</div><p class="tools col-sm-3"><a class="edit-link" name="file" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a></p></div>';
           break;
       case "sex":
           //性别
-          var radom = Math.ceil(Math.random() * 100000);
-          var radio = '<label class="radio-inline"><input type="radio" value="男" name="rad' + radom + '" checked> 男</label><label class="radio-inline"><input type="radio" name="rad' + radom + '" value="女"> 女</label>';
+          var radio = '<label class="radio-inline"><input type="radio" value="男" name="sex" checked> 男</label><label class="radio-inline"><input type="radio" name="sex" value="女"> 女</label>';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">性别：</label><div class="col-sm-7">' + radio + '</div><p class="tools col-sm-3"><a class="edit-link" name="radio" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a></p></div>';
           break;
       case "occupation":
           //职位
-          var text = '<input type="text" class="form-control" placeholder="请输入你的职位">';
+          var text = '<input type="text" name="position"  class="form-control" placeholder="请输入你的职位">';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">职位：</label><div class="col-sm-7">' + text + '</div><p class="tools col-sm-3"><a class="edit-link" name="text" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a><label class="labcheck"><input type="checkbox"> 必填</label></p></div>';
           break;
       case "profile":
           //个人简介
-          var textarea = '<textarea class="form-control" placeholder="请输入你的简介"></textarea>';
+          var textarea = '<textarea name="introduce" class="form-control" placeholder="请输入你的简介"></textarea>';
           content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">个人简介：</label><div class="col-sm-7">' + textarea + '</div><p class="tools col-sm-3"><a class="edit-link" name="textarea" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a><label class="labcheck"><input type="checkbox"> 必填</label></p></div>';
           break;
   }
