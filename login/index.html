@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>站内应用 - 易班</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="shortcut icon" href="/open/img/main/yb.ico">
+  <link href="/global/css/bootstrap.min.css?v=20180813" type="text/css" rel="stylesheet" />
+  <link href="/global/css/bootstrap-responsive.min.css?v=20180813" type="text/css" rel="stylesheet" />
+  <link href="/apps/css/default.css?v=20180813" type="text/css" rel="stylesheet" />
+  <script src="/global/js/jquery1.11.0.min.js?v=20180813" type="text/javascript"></script>
+  <script src="/global/js/jquery.slides.js?v=20180813" type="text/javascript"></script>
+  <script src="/global/js/jquery_and_jqueryui.js?v=20180813" type="text/javascript"></script>
+  <script src="/global/js/jquery.form.js?v=20180813" type="text/javascript"></script>
+  <script src="/global/js/bootstrap.min.js?v=20180813" type="text/javascript"></script>
+  <script src="/global/js/html5shiv.js?v=20180813" type="text/javascript"></script>
+  <script src="/global/js/respond.min.js?v=20180813" type="text/javascript"></script>
+  <script src="/global/js/compat.js?v=20180813" type="text/javascript"></script>
+  <script src="/apps/js/base.js?v=20180813" type="text/javascript"></script>
+</head>
+
+<body>
+  <script>
+    $("body").ready(function(){
+    document.getElementById("app_iframe").submit();
+  });
+  </script>
+  <div class="header">
+    <div class="headInside">
+      <div class="logo pull-left">
+        <a href="http://www.yiban.cn">
+          <div class="logo_img pull-left"></div>
+        </a>
+      </div>
+      <div class="menu pull-left">
+        <!--<ul>
+            <li><a href="http://www.yiban.cn">易班</a></li>
+            <li><a href="#">应用中心</a></li>
+          </ul>-->
+      </div>
+      <div class="logreg pull-right">
+        <div class="loginshowUser pull-right">
+          <div class="uicon pull-left">朱通通</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="frameMain">
+    <!--
+          <div class="appCon">
+        <div class="appImg pull-left"><img width="108" height="108" src="http://img01.fs.yiban.cn/pic/5771709/web/thumb/open/14834973053608/ayrfgnk1am8s1flh4xnv249jtnwlrw8c.png"></div>
+        <ul class="pull-left">
+          <li></li>
+          <li class="gray kw"></li>
+          <li class="gray"><span>90人</span>使用过</li>
+        </ul>
+        <div class="appMan pull-right">
+          <ul class="pull-left">
+            <li>开发者：</li>
+            <li>来自：</li>
+          </ul>
+        </div>
+      </div>
+          -->
+    <div class="frame">
+      <form method="post" name="app_iframe" id="app_iframe" action="http://120.25.89.160:100/login.php" target="post_iframe">
+        <input type="hidden" name="verify_request" value="7ccd7e205c2d63bfa352af367377bc689449350305fdcd4f4be536d91bdb2c1e74de088a4ff681afdeb7e9e8072c6f88aea56d8299673afad0290093516d71694e704edbfaf091c79543c8a2bb74c1ec101a86225060a4526389b2de4a659cb310e9d7f2721298d798634dcedbd2a84fded65452ba354cff37ddae5fda0839b5929bb36bc47cba2cfc05c5b761fec9ca3377a1f3b1fecfb9fcb8e77da610c0844298d81034c975102fb15bdb29067c994835e461a1c66199131d5908952cc9ba95b4783806245e1207f29d634b88b6c7ce2ad071d99d4be7e770f3c33bceef8a9f5f63321a7d28b2ffa431069f7a2b4a" />
+        <input type="hidden" name="verify4j_request" value="eb0b3d0892b3c7acdb7f81dfc1f1b1659fc342246323cddac39610b6af82284c17257b46f2c116c59fc213ede230e9df8e2c36e5ac5ec7804305208980d80072b323c6b2351a389dcaadcd8ddafc57ab5c5c9f59b4a65d7c650c592216896256b7809f6b90bd5805a7e15876691acc22b27b0667d6683e8335ad5fa3320a2dc2c81ef80f31ab147f55a99861810b47247e5b498e8eb7bee3ff587702f6d23213486c012e4150999ee2ddf4183d7ef7e41186fb847d835948cf79222890284eed29ab2612fe5c4a42c657ea9c3bd39e85ad22bdd32b3afaeecb3cc321850efa29424b537270633b7ffa52b727fa9440bd" />
+        <input type="hidden" name="yb_uid" value="8486449" />
+      </form>
+      <iframe id="b_iframe" name="post_iframe" style="width: 1024px; height: 600px;" src="" frameborder="no" border="0px"
+        marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+    </div>
+  </div>
+  <div class="yiban-footer">
+    <div class="containerNew iblock-wrap">
+      <!-- <dl class="iblock about-yiban">
+        <dt>关于</dt>
+          <dd><a href="#">易班简介</a></dd>
+          <dd><a href="#">易班愿景</a></dd>
+          <dd><a href="#">易班文化</a></dd>
+        </dl> -->
+      <dl class="iblock join-us">
+        <dt>加入</dt>
+        <dd><a target="_blank" href="http://search.51job.com/list/co,c,2306770,0000,10,1.html">社会招聘</a></dd>
+        <dd><a target="_blank" href="http://www.yiban.cn/project/joinus/">校园招聘</a></dd>
+      </dl>
+      <dl class="iblock contact-us">
+        <dt>联系</dt>
+        <dd>
+          <address>
+            地址：上海市杨浦区国康路100号<br>
+            邮编：200092<br>
+            电话：021-60161000<br>
+            传真：021-60708028<br>
+            邮箱：<a href="mailto:contact@yiban.cn">contact@yiban.cn</a>
+          </address>
+        </dd>
+      </dl>
+      <dl class="iblock other">
+        <dt>其他</dt>
+        <!-- <dd><a href="#">网站地图</a></dd>
+          <dd><a href="#">意见反馈</a></dd> -->
+        <dd><a target="_blank" href="http://www.yiban.cn/service_treaty.php">用户协议</a></dd>
+        <dd><a target="_blank" href="http://www.yiban.cn/help.html">客服中心</a></dd>
+      </dl>
+      <dl class="iblock brand">
+        <dt>品牌</dt>
+        <dd>
+          <a href="http://www.yiban.cn" class="icon brand-yiban"></a>
+          <a href="http://www.21boya.cn/" class="icon brand-boya"></a>
+          <a href="http://zz.yiban.cn/" class="icon brand-zz"></a>
+          <a href="http://k.yiban.cn/" class="icon brand-k"></a>
+        </dd>
+      </dl>
+      <p class="iblock slogan"></p>
+      <p class="iblock copyright">Copyright &copy; 2008-2018 <a href="/">YIBAN</a>. All Rights Reserved.</p>
+      <div class="iblock-wrap aside-line">
+        <div class="iblock red"></div>
+        <div class="iblock green"></div>
+        <div class="iblock blue"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fullbg" onClick="closeDiv('login')"></div>
+</body>
+
+</html>

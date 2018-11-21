@@ -379,3 +379,12 @@ li {
   border:0px;
   border:1px solid #999;
 }
+.welcome {
+  display: flex;
+  justify-content: center;
+}
+.summitWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}

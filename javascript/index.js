@@ -16,7 +16,7 @@ $(document).ready(function() {
       }
   });
   setup_draggable();
-  $("#copy-to-clipboard").on("click", function() {
+  $("#commitform").on("click", function() {
           var $copy = $(".form-body").clone().appendTo(document.body);
 
           $copy.find(".tools, :hidden").remove();
@@ -26,14 +26,20 @@ $(document).ready(function() {
           });
 
           var html = html_beautify($copy.html());
+          console.log(html)
           $copy.remove();
+          $.post("http://localhost:3000/postform",{
+			    name: html,
+            },
+            function(data,status){
+                console.log(data, status)
+            });
+        //   $modal = get_modal(html, 'cont').modal("show");
+        //   $modal.find(".btn").remove();
+        //   $modal.find(".modal-title").html("复制HTML代码");
+        //   $modal.find(":input:first").select().focus();
 
-          $modal = get_modal(html, 'cont').modal("show");
-          $modal.find(".btn").remove();
-          $modal.find(".modal-title").html("复制HTML代码");
-          $modal.find(":input:first").select().focus();
-
-          return false
+          
       })
       //点击添加表单
   $(".btntext,.btntexts").click(function() {
@@ -146,7 +152,7 @@ function tableList(id) {
       case "datetime":
           //时间
           var datetime = '<input readonly="" class="form-control form_datetime" type="text" style="border: 1px solid #e5e6e7;">';
-          content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">文本：</label><div class="col-sm-7">' + datetime + '</div><p class="tools col-sm-3"><a class="edit-link" name="datetime" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a></p></div>';
+          content = '<div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">时间：</label><div class="col-sm-7">' + datetime + '</div><p class="tools col-sm-3"><a class="edit-link" name="datetime" title="设置"><i class="fa fa-cog fa-fw"></i></a><a class="remove-link"><i class="fa fa-trash-o"></i></a></p></div>';
           break;
       case "file":
           //上传
