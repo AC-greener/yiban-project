@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>user</title>
   <meta charset="utf-8" />
@@ -24,15 +25,98 @@
   <script src="js/jquery-ui.min.js"></script>
   <script src="form_builder/beautifyhtml.js"></script>
   <script src="javascript/index.js"></script>
+  <style>
+    .container>h3 {
+      text-align: center
+    }
+    .ibox-content {
+    }
+    h3 {
+      
+    }
+  </style>
 </head>
 
-<body style="background-color:#f7f5f6;">
+<body>
   <div class="container">
-    <h1>欢迎使用超级表单</h1>
-  </div>
-  <div class="summitWrapper">
-    <button type="submit" id="">提交表单</button>
+    <h3>欢迎使用超级表单</h3>
+    <div class="ibox-content col-md-12">
+      <div class="row form-body form-horizontal m-t">
+        <div class="col-md-12 droppable sortable ui-droppable ui-sortable">
+            <form class="form-horizontal" method="POST" action="">
+             
+                <div class="form-group">
+                  <label for="studentName" >姓名：</label>
+                  <div >
+                    <input type="text" class="form-control" id="studentName" name="studentName" placeholder="请输入你的姓名：">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="studentPhone">手机号：</label>
+                  <input type="number" class="form-control" id="studentPhone" name="studentPhone" placeholder="请输入你的手机号：">
+                </div>
+                <div class="form-group">
+                  <label for="studentIdCard">身份证：</label>
+                  <input type="number" class="form-control" id="studentIdCard" name="studentIdCard" placeholder="请输入你的身份证：">
+                </div>
+                <div class="form-group">
+                  <label for="studentEmail">邮箱：</label>
+                  <input type="email" class="form-control" id="studentEmail" name="studentEmail" placeholder="请输入你的邮箱：">
+                </div>
+                <!-- <div class="form-group">
+                  <div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">时间：</label>
+                    <div class="col-sm-7"><input name="datetime" readonly="" class="form-control form_datetime" type="text" style="border: 1px solid #e5e6e7;"></div>
+                    <p class="tools col-sm-3"><a class="edit-link" name="datetime" title="设置"><i class="fa fa-cog fa-fw"></i></a><a
+                        class="remove-link"><i class="fa fa-trash-o"></i></a></p>
+                  </div>
+                </div> -->
+                <button type="submit" class="btn btn-info">提交</button>
+              </form>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="ibox-content col-md-12">
+      <div class="row form-body form-horizontal m-t">
+        <div class="col-md-12 droppable sortable ui-droppable ui-sortable">
+          <div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">姓名：</label>
+            <div class="col-sm-7"><input type="text" name="studentName" class="form-control" placeholder="请输入你的姓名"></div>
+          </div>
+          <div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">身份证：</label>
+            <div class="col-sm-7"><input type="text" name="studentIdCard" class="form-control" placeholder="请输入你的身份证"></div>
+          </div>
+          <div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">下拉框：</label>
+            <div class="col-sm-7">
+              <select name="select" class="form-control">
+                <option>请选择</option>
+                <option>默认</option>
+              </select></div>
+          </div>
+          <div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">单选：</label>
+            <div class="col-sm-7"><label class="radio-inline"><input name="radio" type="radio" value="默认1" checked="">
+                默认1</label><label class="radio-inline"><input type="radio" name="radio" value="默认2"> 默认2</label></div>
+          </div>
+          <div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">多选：</label>
+            <div class="col-sm-7"><label class="radio-inline" style="padding-left:0px;"><input type="checkbox" name="checkbox">
+                默认1</label><label class="radio-inline" style="padding-left:0px;"><input type="checkbox" name="checkbox">
+                默认2</label>
+            </div>
+          </div>
+          <div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">多行文本：</label>
+            <div class="col-sm-7"><textarea name="textArea" class="form-control" placeholder="请输入文本"></textarea></div>
+          </div>
+          <div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">时间：</label>
+            <div class="col-sm-7"><input name="datetime" readonly="" class="form-control form_datetime" type="text" style="border: 1px solid #e5e6e7;"></div>
+            <p class="tools col-sm-3"><a class="edit-link" name="datetime" title="设置"><i class="fa fa-cog fa-fw"></i></a><a
+                class="remove-link"><i class="fa fa-trash-o"></i></a></p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
   </div>
 
+
 </body>
+
 </html>
