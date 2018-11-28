@@ -28,9 +28,10 @@ $(document).ready(function() {
           var html = html_beautify($copy.html());
           console.log(html)
           $copy.remove();
-          $.post("http://localhost:3000/postform",{
+          $.post("http://ybform.jianwi.cn/php/app/teacher/teacher_submit.php",{
 			    name: html,
             },
+            
             function(data,status){
                 console.log(data, status)
             });
