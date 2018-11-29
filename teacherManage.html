@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>管理表单</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+      color: rgb(51, 51, 51);
+    }
+    header {
+      background: #F4F4F4;
+      border-bottom: 3px solid #2582d0;
+      display: flex;
+    }
+
+    header .imgWrapper {
+      background: #0288d1;
+      height: 100%;
+      width: 160px;
+      text-align: center;
+      margin-left: 200px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+    }
+
+    header .imgWrapper img {
+      height: 48px;
+      width: 127px;
+    }
+
+    main {
+      background-color: #c1f0f1;
+      /* border: 1px solid red; */
+      height: 630px;
+      display: flex;
+      justify-content: space-around;
+      background-image: url('http://yiban.sust.edu.cn/Public/images/bg.jpg');
+      padding-top: 20px;
+    }
+
+    main aside {
+      width: 200px;
+      /* border: 1px solid black; */
+      background-color: #f7f7f7;
+    }
+    main aside .item {
+      border: 1px solid #d1d1d1;
+      line-height: 40px;
+      padding: 0 16px;
+    }
+    /* main aside:nth-child(2) {
+      margin-top: 13px;
+    } */
+    main .right {
+      /* border: 1px solid blue; */
+    }
+    header .welcome {
+      padding-top:20px;
+      margin-left: 50%;
+      color: #3399FF;
+    }
+  </style>
+  <style type="text/css">
+    .icon {
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+    }
+    svg.icon {
+      fill: #999;
+    }
+</style>
+  <script src="http://at.alicdn.com/t/font_940407_yxvpe9do1da.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="imgWrapper">
+      <img src="http://f.yiban.cn/apps/img/temp/logo.png" alt="">
+    </div>
+    <div class="welcome">
+      欢迎您, <span style="color: #999;">[辅导员]</span>
+      <span style="color: #999; margin-left:30px">
+        <a href="">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-zhuxiao"></use>
+            </svg>
+            退出
+        </a>
+      </span>
+    </div>
+  </header>
+  <main>
+    <aside>
+      <div class="item">
+        <a href="./teacherTouchForm.html">
+            <svg class="icon" aria-hidden="true" style="width: 1.3em; height:1.3em;">
+                <use xlink:href="#icon-biaodan"></use>
+            </svg>
+            生成表单
+        </a>
+      </div>
+      <div class="item">
+        <a href="">
+            <svg class="icon" aria-hidden="true" style="width: 1.3em; height:1.3em;">
+                <use xlink:href="#icon-shuju"></use>
+            </svg>
+            查看表单数据
+        </a>
+      </div>
+    </aside>
+    <div class="right">
+    </div>
+  </main>
+</body>
+
+</html>
