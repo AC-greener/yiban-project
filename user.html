@@ -31,8 +31,7 @@
     }
     .ibox-content {
     }
-    h3 {
-      
+    .container {
     }
   </style>
 </head>
@@ -43,24 +42,24 @@
     <div class="ibox-content col-md-12">
       <div class="row form-body form-horizontal m-t">
         <div class="col-md-12 droppable sortable ui-droppable ui-sortable">
-            <form class="form-horizontal" method="POST" action="">
+            <form class="form-horizontal" method="POST" action="http://Ybform.jianwi.cn/php/app/student/students_submit_form.php" >
                 <div class="form-group">
                   <label for="studentName" >姓名：</label>
                   <div >
-                    <input type="text" class="form-control" id="studentName" name="studentName" placeholder="请输入你的姓名：">
+                    <input type="text" class="form-control" id="studentName" name="studentName" placeholder="请输入你的姓名：" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="studentPhone">手机号：</label>
-                  <input type="number" class="form-control" id="studentPhone" name="studentPhone" placeholder="请输入你的手机号：">
+                  <input type="number" class="form-control" id="studentPhone" name="studentPhone" placeholder="请输入你的手机号：" required>
                 </div>
                 <div class="form-group">
                   <label for="studentIdCard">身份证：</label>
-                  <input type="number" class="form-control" id="studentIdCard" name="studentIdCard" placeholder="请输入你的身份证：">
+                  <input type="number" class="form-control" id="studentIdCard" name="studentIdCard" placeholder="请输入你的身份证：" required>
                 </div>
                 <div class="form-group">
                   <label for="studentEmail">邮箱：</label>
-                  <input type="email" class="form-control" id="studentEmail" name="studentEmail" placeholder="请输入你的邮箱：">
+                  <input type="email" class="form-control" id="studentEmail" name="studentEmail" placeholder="请输入你的邮箱：" required>
                 </div>
                 <!-- <div class="form-group">
                   <div class="form-group draggable ui-draggable dropped"><label class="col-sm-2 control-label">时间：</label>

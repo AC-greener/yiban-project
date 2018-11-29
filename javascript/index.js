@@ -31,8 +31,8 @@ $(document).ready(function() {
           $.post("http://ybform.jianwi.cn/php/app/teacher/teacher_submit.php",{
 			    name: html,
             },
-            
-            function(data,status){
+
+            function(data, status){
                 console.log(data, status)
             });
         //   $modal = get_modal(html, 'cont').modal("show");
