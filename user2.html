@@ -34,10 +34,21 @@
     </header>
    
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-12" id="showText">
         <p>暂无事务</p>
       </div>
     </div>
+
+    <div id="things"></div>
   </div>
+  <script>
+    var things = document.getElementById('things')
+    var showText = document.querySelector('#showText')
+    if(things.childNodes.length === 0) {
+      showText.textContent = '暂无事务'
+    } else {
+      showText.textContent = '待处理事务'
+    }
+  </script>
 </body>
 </html>
