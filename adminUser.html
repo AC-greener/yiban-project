@@ -24,6 +24,7 @@
     }
 
   </style>
+  <script src="./js/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -64,15 +65,15 @@
             <table class="table table-bordered text-center hover ">
                 <thead>
                   <tr>
-                    <td>易班ID</td>
+                    <td>申请序号</td>
                     <td>姓名</td>
                     <td>手机</td>
                     <td>管理员类型</td>
                     <td>操作</td>
                   </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody id="adminInfo">
+                    <!-- <tr>
                       <td>88796545</td>
                       <td>隔壁老王</td>
                       <td>12345678910</td>
@@ -89,7 +90,7 @@
                       <td>
                         <a href="">取消管理员</a>
                       </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
               </table>
          </div>
@@ -100,7 +101,7 @@
             <table class="table table-bordered text-center hover ">
                 <thead>
                   <tr>
-                    <td>易班ID</td>
+                    <td>申请序号</td>
                     <td>姓名</td>
                     <td>手机</td>
                     <td>管理员类型</td>
@@ -108,14 +109,14 @@
                   </tr>
                 </thead>
                 <tbody id="applyInfo">
-                    <tr>
+                    <!-- <tr>
                       <td>88796545</td>
                       <td>隔壁老王</td>
                       <td>12345678910</td>
                       <td>辅导员</td>
                       <td>
-                        <a href="">同意</a>
-                        <a href="">不同意</a>
+                        <button class="agree" href="">同意</button>
+                        <button class="disagree" href="">不同意</button>
                       </td>
                     </tr>
 
@@ -128,7 +129,7 @@
                           <a href="">同意</a>
                           <a href="">不同意</a>
                       </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
               </table>
          </div>
@@ -139,18 +140,40 @@
       window.onload = function() {
         var template = ''
         var applyInfo = document.getElementById('applyInfo')
-        $.get('url', function(data) {
-          template = `<tr>
-                      <td>88796545</td>
-                      <td>隔壁老王</td>
-                      <td>12345678910</td>
-                      <td>辅导员</td>
-                      <td>
-                        <a href="">同意</a>
-                        <a href="">不同意</a>
-                      </td>
-                    </tr>`
-          applyInfo.appendChild(template)
+        var adminInfo = document.getElementById('adminInfo')
+        $.get('http://ybform.jianwi.cn/php/app/common/admin_index.php', function(data) {
+          var dataApply = data.apply
+          var dataAdmin = data.admin
+          for(var i = 0; i < dataApply.length; i++) {
+            var tr = document.createElement('tr')
+            var template = `
+                          <td>${dataApply[i].teach_id}</td>
+                          <td>${dataApply[i].useName}</td>
+                          <td>${dataApply[i].phone}</td>
+                          <td>${dataApply[i].fudaoyuan}</td>
+                          <td>
+                            <a href="http://ybform.jianwi.cn/php/app/common/check.php?y=${dataApply[i].phone}">同意</a>
+                            <a href="http://ybform.jianwi.cn/php/app/common/check.php?n=${dataApply[i].phone}">不同意</a>
+                          </td>
+                      `
+            tr.innerHTML = template
+            applyInfo.appendChild(tr)
+          }
+          
+          for(var j = 0; j < dataAdmin.length; j++) {
+            var tr = document.createElement('tr')
+            var template1 = `
+                          <td>${dataAdmin[j].teach_id}</td>
+                          <td>${dataAdmin[j].useName}</td>
+                          <td>${dataAdmin[j].phone}</td>
+                          <td>${dataAdmin[j].fudaoyuan}</td>
+                          <td>
+                            <a href="">取消管理员</a>
+                          </td>
+                      `
+            tr.innerHTML = template1
+            adminInfo.appendChild(tr)
+          }
         })
       }
     </script>

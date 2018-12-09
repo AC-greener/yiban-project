@@ -18,20 +18,27 @@ $(document).ready(function() {
   setup_draggable();
   $("#commitform").on("click", function() {
           var $copy = $(".form-body").clone().appendTo(document.body);
-
+          var nameValue= document.querySelector('#myForm').value
           $copy.find(".tools, :hidden").remove();
-
           $.each(["draggable", "droppable", "sortable", "dropped", "ui-sortable", "ui-draggable", "ui-droppable", "form-body"], function(i, c) {
               $copy.find("." + c).removeClass(c).removeAttr("style")
           });
-
-          var html = html_beautify($copy.html());
+          var template = `
+            <div class="form-group">
+                <label class="col-sm-2 control-label">表单名称：</label>
+                <div class="col-sm-7">
+                    <input type="text" name="formName" class="form-control" placeholder="请输入要创建的表单名称">
+                </div>
+            </div>
+          `
+        //   var html = html_beautify($copy.html());
+          var html = $copy.html()
           console.log(html)
           $copy.remove();
           $.post("http://ybform.jianwi.cn/php/app/teacher/teacher_submit.php",{
-			    name: html,
+                name: html,
+                formName: nameValue
             },
-
             function(data){
                 console.log(data)
             });
@@ -39,8 +46,6 @@ $(document).ready(function() {
         //   $modal.find(".btn").remove();
         //   $modal.find(".modal-title").html("复制HTML代码");
         //   $modal.find(":input:first").select().focus();
-
-          
       })
       //点击添加表单
   $(".btntext,.btntexts").click(function() {

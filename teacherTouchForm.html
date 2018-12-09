@@ -25,6 +25,11 @@
   <script src="js/jquery-ui.min.js"></script>
   <script src="form_builder/beautifyhtml.js"></script>
   <script src="javascript/index.js"></script>
+  <style>
+    .col-sm-7.classes {
+      margin-top: 7px;
+    }
+  </style>
 </head>
 
 <body style="background-color:#f7f5f6;">
@@ -36,7 +41,7 @@
             <div class="welcome">
               <h3>欢迎使用超级表单</h3>
             </div>
-            <div class="wrapper wrapper-content" >
+            <div class="wrapper wrapper-content">
               <div class="row" style="border-left: 2px dashed rgba(0,0,0,0.12);border-right: 2px dashed rgba(0,0,0,0.12);border-bottom: 2px dashed rgba(0,0,0,0.12);">
                 <div id="colzuo" class="col-sm-9" style="border-right: 2px dashed rgba(0,0,0,0.12);">
                   <div class="ibox float-e-margins">
@@ -50,6 +55,12 @@
                     <div class="ibox-content">
                       <div class="row form-body form-horizontal m-t">
                         <div class="col-md-12 droppable sortable ui-droppable ui-sortable">
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label">表单名称：</label>
+                            <div class="col-sm-7">
+                              <input type="text" name="formName" id="myForm" class="form-control" placeholder="请输入要创建的表单名称">
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -61,7 +72,7 @@
                       <h5>自定义表单项</h5>
                     </div>
                     <div class="ibox-content">
-                      <form role="form" class="form-horizontal m-t" id='form' >
+                      <form role="form" class="form-horizontal m-t" id='form'>
                         <p><b>常用项</b></p>
                         <table>
                           <tr>
@@ -131,6 +142,27 @@
                   </div>
                 </div>
               </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">选择填写的班级：</label>
+                <div class="col-sm-7 classes">
+                  <label class="radio-inline" style="padding-left:0px;">
+                    <input value="网络161" type="checkbox" name="myClass">
+                      网络161
+                  </label>
+                  <label class="radio-inline" style="padding-left:0px;">
+                    <input value="网络162" type="checkbox" name="myClass">
+                    网络162
+                  </label>
+                  <label class="radio-inline" style="padding-left:0px;">
+                    <input value="计本161" type="checkbox" name="myClass">
+                    计本161
+                  </label>
+                  <label class="radio-inline" style="padding-left:0px;">
+                    <input value="计本162" type="checkbox" name="myClass">
+                    计本162
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -142,4 +174,5 @@
   </div>
 
 </body>
+
 </html>
