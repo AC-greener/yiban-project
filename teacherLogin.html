@@ -108,11 +108,11 @@
     <main>
       <div class="formWraper">
         <h3>欢迎使用超级表单系统</h3>
-        <form class="form-horizontal">
+        <form class="form-horizontal" action="http://ybform.jianwi.cn/php/app/common/apply_teacher.php" method="POST">
           <div class="form-group">
             <label for="school" class="col-sm-2 control-label">学校：</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control"  value="陕西科技大学" disabled>
+              <input type="text" class="form-control" name="school"  value="陕西科技大学" disabled>
             </div>
           </div>
           <div class="form-group">
@@ -124,7 +124,7 @@
           <div class="form-group">
             <label for="name" class="col-sm-2 control-label">姓名：</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" name="name" id="name" placeholder="真实姓名">
+              <input type="password" class="form-control" name="useName" id="name" placeholder="真实姓名">
             </div>
           </div>
           <div class="form-group">
@@ -239,33 +239,7 @@
     var school = document.getElementById('school')
     var childs = school.childNodes
     var len = childs.length
-    // console.log(school)
-    // school.onclick = function(e) {
-    //   var target = e.target
-      // for(var i = 0; i < len; i++) {
-      //   if(childs[i].nodeType === 1) {
-      //     childs[i].classList.remove('active')
-      //   }
-      // }
-      // if(target.tagName.toLowerCase() === 'LABEL') {
-      //   console.log(target)
-      // }
-      // console.log(target)
-      // e.target.classList.add('active')
-      // console.log(target.nodeName)
-    // }
-    // school.addEventListener('click', function (e) {
-    //   // if(e.target.tagName.toLowerCase() === 'INPUT') {
-    //   //   return false
-    //   // }
-    //   e.stopPropagation();
-    //   var target = e.target
-    //   console.log(target)
-    //   if(target.tagName.toLowerCase() === 'LABEL') {
-    //     console.log(target)
-    //   }
-    // }, true);
-
+    
   </script>
 </body>
 </html>

@@ -32,8 +32,8 @@ $(document).ready(function() {
 			    name: html,
             },
 
-            function(data, status){
-                console.log(data, status)
+            function(data){
+                console.log(data)
             });
         //   $modal = get_modal(html, 'cont').modal("show");
         //   $modal.find(".btn").remove();

@@ -11,10 +11,12 @@
       margin: 0;
       padding: 0;
     }
+
     a {
       text-decoration: none;
       color: rgb(51, 51, 51);
     }
+
     header {
       background: #F4F4F4;
       border-bottom: 3px solid #2582d0;
@@ -51,35 +53,41 @@
       /* border: 1px solid black; */
       background-color: #f7f7f7;
     }
+
     main aside .item {
       border: 1px solid #d1d1d1;
       line-height: 40px;
       padding: 0 16px;
     }
+
     /* main aside:nth-child(2) {
       margin-top: 13px;
     } */
     main .right {
       /* border: 1px solid blue; */
     }
+
     header .welcome {
-      padding-top:20px;
+      padding-top: 20px;
       margin-left: 50%;
       color: #3399FF;
     }
   </style>
   <style type="text/css">
     .icon {
-       width: 1em; height: 1em;
-       vertical-align: -0.15em;
-       fill: currentColor;
-       overflow: hidden;
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
     }
+
     svg.icon {
       fill: #999;
     }
-</style>
+  </style>
   <script src="http://at.alicdn.com/t/font_940407_yxvpe9do1da.js"></script>
+  <script src="./js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -91,10 +99,10 @@
       欢迎您, <span style="color: #999;">[辅导员]</span>
       <span style="color: #999; margin-left:30px">
         <a href="">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-zhuxiao"></use>
-            </svg>
-            退出
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-zhuxiao"></use>
+          </svg>
+          退出
         </a>
       </span>
     </div>
@@ -103,24 +111,32 @@
     <aside>
       <div class="item">
         <a href="./teacherTouchForm.html">
-            <svg class="icon" aria-hidden="true" style="width: 1.3em; height:1.3em;">
-                <use xlink:href="#icon-biaodan"></use>
-            </svg>
-            生成表单
+          <svg class="icon" aria-hidden="true" style="width: 1.3em; height:1.3em;">
+            <use xlink:href="#icon-biaodan"></use>
+          </svg>
+          生成表单
         </a>
       </div>
       <div class="item">
         <a href="">
-            <svg class="icon" aria-hidden="true" style="width: 1.3em; height:1.3em;">
-                <use xlink:href="#icon-shuju"></use>
-            </svg>
-            查看表单数据
+          <svg class="icon" aria-hidden="true" style="width: 1.3em; height:1.3em;">
+            <use xlink:href="#icon-shuju"></use>
+          </svg>
+          查看表单数据
         </a>
       </div>
     </aside>
     <div class="right">
     </div>
   </main>
+  <script>
+    // window.onload = function () {
+    //   $.get("http://Ybform.jianwi.cn/php",
+    //     function (data) {
+    //       console.log(data)
+    //     });
+    // }
+  </script>
 </body>
 
 </html>

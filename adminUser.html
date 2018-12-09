@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+  <title>用户管理</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+  <link rel="stylesheet" href="./css/style/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style/style.css">
+  <style>
+    header {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    header h3 {
+      font-family:'Pacifico', 'Courier New', Courier, monospace
+    }
+    .form-horizontal {
+      margin: 0 auto;
+    }
+    table tr:hover{
+      background-color: #eee;
+    }
+
+  </style>
+</head>
+<body>
+    <header>
+      <h3 class="text-center">欢迎使用超级表单</h3>
+    </header>
+    <div class="container-fluid wrapper">
+        <h4 class="text-center"> <strong>任命管理员</strong></h4>
+       <div class="row">
+         <div class="col-sm-6 col-sm-offset-3">
+            <form class="form-horizontal" action="/postapi/addManager" method="POST">
+                <div class="form-group">
+                  <label for="Eclass" class="col-sm-3 control-label" >易班ID:</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="userId" name='userId' placeholder="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-3 control-label">管理员类型:</label>
+                  <div class="col-sm-5">
+                      <select class="form-control" id="userType" name="userType">
+                          <option>辅导员</option>
+                          <option>超级用户</option>
+                      </select>
+                  </div>
+                 
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-3 col-sm-10">
+                    <button type="submit" class="btn btn-default">确认添加</button>
+                  </div>
+                </div>
+            </form>
+         </div>
+       </div>
+       <div class="row">
+         <h4 class="text-center">管理员信息</h4>
+         <div class="col-sm-6 col-sm-offset-3">
+            <table class="table table-bordered text-center hover ">
+                <thead>
+                  <tr>
+                    <td>易班ID</td>
+                    <td>姓名</td>
+                    <td>手机</td>
+                    <td>管理员类型</td>
+                    <td>操作</td>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td>88796545</td>
+                      <td>隔壁老王</td>
+                      <td>12345678910</td>
+                      <td>辅导员</td>
+                      <td>
+                        <a href="">取消管理员</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>91345412</td>
+                      <td>小朱</td>
+                      <td>12345678910</td>
+                      <td>超级用户</td>
+                      <td>
+                        <a href="">取消管理员</a>
+                      </td>
+                    </tr>
+                </tbody>
+              </table>
+         </div>
+       </div>
+       <div class="row">
+         <h4 class="text-center">申请人信息</h4>
+         <div class="col-sm-6 col-sm-offset-3">
+            <table class="table table-bordered text-center hover ">
+                <thead>
+                  <tr>
+                    <td>易班ID</td>
+                    <td>姓名</td>
+                    <td>手机</td>
+                    <td>管理员类型</td>
+                    <td>操作</td>
+                  </tr>
+                </thead>
+                <tbody id="applyInfo">
+                    <tr>
+                      <td>88796545</td>
+                      <td>隔壁老王</td>
+                      <td>12345678910</td>
+                      <td>辅导员</td>
+                      <td>
+                        <a href="">同意</a>
+                        <a href="">不同意</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>91345412</td>
+                      <td>小朱</td>
+                      <td>12345678910</td>
+                      <td>超级用户</td>
+                      <td>
+                          <a href="">同意</a>
+                          <a href="">不同意</a>
+                      </td>
+                    </tr>
+                </tbody>
+              </table>
+         </div>
+       </div>
+    
+    </div>
+    <script>
+      window.onload = function() {
+        var template = ''
+        var applyInfo = document.getElementById('applyInfo')
+        $.get('url', function(data) {
+          template = `<tr>
+                      <td>88796545</td>
+                      <td>隔壁老王</td>
+                      <td>12345678910</td>
+                      <td>辅导员</td>
+                      <td>
+                        <a href="">同意</a>
+                        <a href="">不同意</a>
+                      </td>
+                    </tr>`
+          applyInfo.appendChild(template)
+        })
+      }
+    </script>
+  </body>
+</html>
