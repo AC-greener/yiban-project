@@ -18,11 +18,20 @@ $(document).ready(function() {
   setup_draggable();
   $("#commitform").on("click", function() {
           var $copy = $(".form-body").clone().appendTo(document.body);
-          var nameValue= document.querySelector('#myForm').value
           $copy.find(".tools, :hidden").remove();
           $.each(["draggable", "droppable", "sortable", "dropped", "ui-sortable", "ui-draggable", "ui-droppable", "form-body"], function(i, c) {
               $copy.find("." + c).removeClass(c).removeAttr("style")
           });
+
+          var nameValue= document.querySelector('#myForm').value
+          var nodeList = document.querySelectorAll('input[name=myClass]')
+          var classes = []
+          for(var i = 0; i< nodeList.length; i++) {
+              if(nodeList[i].checked) {
+                  console.log(nodeList[i].value)
+                  classes.push(nodeList[i].value)
+              }
+          }
           var template = `
             <div class="form-group">
                 <label class="col-sm-2 control-label">表单名称：</label>
@@ -33,11 +42,12 @@ $(document).ready(function() {
           `
         //   var html = html_beautify($copy.html());
           var html = $copy.html()
-          console.log(html)
+          console.log(classes)
           $copy.remove();
           $.post("http://ybform.jianwi.cn/php/app/teacher/teacher_submit.php",{
                 name: html,
-                formName: nameValue
+                formName: nameValue,
+                classes:classes
             },
             function(data){
                 console.log(data)
