@@ -144,6 +144,7 @@
         $.get('http://ybform.jianwi.cn/php/app/common/admin_index.php', function(data) {
           var dataApply = data.apply
           var dataAdmin = data.admin
+          console.log(data)
           for(var i = 0; i < dataApply.length; i++) {
             var tr = document.createElement('tr')
             var template = `

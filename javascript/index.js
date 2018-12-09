@@ -42,12 +42,11 @@ $(document).ready(function() {
           `
         //   var html = html_beautify($copy.html());
           var html = $copy.html()
-          console.log(classes)
           $copy.remove();
-          $.post("http://ybform.jianwi.cn/php/app/teacher/teacher_submit.php",{
+          $.post("http://ybform.jianwi.cn/php/app/common/creat_form.php",{
                 name: html,
                 formName: nameValue,
-                classes:classes
+                classes:classes.toString()
             },
             function(data){
                 console.log(data)

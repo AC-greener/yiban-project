@@ -42,7 +42,7 @@
     <div class="ibox-content col-md-12">
       <div class="row form-body form-horizontal m-t">
         <div class="col-md-12 droppable sortable ui-droppable ui-sortable">
-            <form class="form-horizontal" method="POST" action="http://Ybform.jianwi.cn/php/app/student/students_submit_form.php" >
+            <form class="form-horizontal" id="myForm" method="POST" action="http://Ybform.jianwi.cn/php/app/student/students_submit_form.php" >
                 <div class="form-group">
                   <label for="studentName" >姓名：</label>
                   <div >
@@ -111,10 +111,17 @@
       </div>
     </div> -->
 
+    <script>
+      window.onload = function() {
+        var myForm = document.getElementById('myForm')
+        $.get('', function(data) {
+          console.log(data)
 
+        })
+      }
+    </script>
   </div>
 
 
 </body>
-
 </html>

@@ -58,7 +58,7 @@
                           <div class="form-group">
                             <label class="col-sm-2 control-label">表单名称：</label>
                             <div class="col-sm-7">
-                              <input type="text" name="formName" id="myForm" class="form-control" placeholder="请输入要创建的表单名称">
+                              <input type="text" name="formName" id="myForm" class="form-control" placeholder="请输入要创建的表单名称" required>
                             </div>
                           </div>
                         </div>
@@ -145,22 +145,24 @@
               <div class="form-group">
                 <label class="col-sm-2 control-label">选择填写的班级：</label>
                 <div class="col-sm-7 classes" id="myClass">
-                  <label class="radio-inline" style="padding-left:0px;">
-                    <input value="网络161" type="checkbox" name="myClass">
-                      网络161
-                  </label>
-                  <label class="radio-inline" style="padding-left:0px;">
-                    <input value="网络162" type="checkbox" name="myClass">
-                    网络162
-                  </label>
-                  <label class="radio-inline" style="padding-left:0px;">
-                    <input value="计本161" type="checkbox" name="myClass">
-                    计本161
-                  </label>
-                  <label class="radio-inline" style="padding-left:0px;">
-                    <input value="计本162" type="checkbox" name="myClass">
-                    计本162
-                  </label>
+                  <div>
+                      <!-- <label class="radio-inline" style="padding-left:0px;">
+                          <input value="网络161" type="checkbox" name="myClass">
+                            网络161
+                        </label>
+                        <label class="radio-inline" style="padding-left:0px;">
+                          <input value="网络162" type="checkbox" name="myClass">
+                          网络162
+                        </label>
+                        <label class="radio-inline" style="padding-left:0px;">
+                          <input value="计本161" type="checkbox" name="myClass">
+                          计本161
+                        </label>
+                        <label class="radio-inline" style="padding-left:0px;">
+                          <input value="计本162" type="checkbox" name="myClass">
+                          计本162
+                        </label> -->
+                  </div>
                 </div>
               </div>
             </div>
@@ -172,7 +174,26 @@
   <div class="summitWrapper">
     <button type="submit" class="btn btn-info" id="commitform">提交表单</button>
   </div>
-
+  <script>
+    window.onload = function() {
+      var myClass = document.querySelector('#myClass')
+      $.get('http://ybform.jianwi.cn/php/app/common/get_myclass.php', function(data) {
+        console.log(data.classes.slice(1, -1))
+        console.log(data.classes.slice(1, -1).split(','))
+        var classes = data.classes.slice(1, -1).split(',')
+        for(var i = 0; i < classes.length; i++) {
+          var label = document.createElement('label')
+          label.classList.add('radio-inline')
+          var template = `
+                          <input value="${classes[i]}" type="checkbox" name="myClass">
+                          ${classes[i]}
+                        `
+          label.innerHTML = template
+          myClass.appendChild(label)
+        }
+      })
+    }
+  </script>
 </body>
 
 </html>
