@@ -40,7 +40,6 @@ $(document).ready(function() {
                 </div>
             </div>
           `
-        //   var html = html_beautify($copy.html());
           var html = $copy.html()
           $copy.remove();
           $.post("http://ybform.jianwi.cn/php/app/common/creat_form.php",{
@@ -51,11 +50,11 @@ $(document).ready(function() {
             function(data){
                 console.log(data)
             });
-        //   $modal = get_modal(html, 'cont').modal("show");
-        //   $modal.find(".btn").remove();
-        //   $modal.find(".modal-title").html("复制HTML代码");
-        //   $modal.find(":input:first").select().focus();
+        setTimeout(() => {
+            window.open('./teacherManage.html', '_self')
+          }, 300)
       })
+      
       //点击添加表单
   $(".btntext,.btntexts").click(function() {
       $(tableList($(this).attr("id"))).appendTo($(".ui-sortable"));
