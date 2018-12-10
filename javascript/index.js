@@ -42,7 +42,7 @@ $(document).ready(function() {
           `
           var html = $copy.html()
           $copy.remove();
-          $.post("http://ybform.jianwi.cn/php/app/common/creat_form.php",{
+          $.post("http://ybform.jianwi.cn/php/app/common/user_get_text.php",{
                 name: html,
                 formName: nameValue,
                 classes:classes.toString()
